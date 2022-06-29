@@ -22,6 +22,16 @@ export default {
 
   data() {
     return {
+      isNavDisplayed: false,
+      isNavOpen: false,
+    }
+
+  },
+
+  methods: {
+    toggleNav() {
+      this.isNavDisplayed = !this.isNavDisplayed;
+      console.log(this.isNavDisplayed );
     }
   },
   computed: {}
