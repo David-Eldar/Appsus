@@ -1,0 +1,9 @@
+/* BASE */
+@import 'parts/base.css';
+@import 'parts/header.css';
+@import 'parts/footer.css';
+
+/* UTILS */
+
+@import 'utils/vars.css'
+

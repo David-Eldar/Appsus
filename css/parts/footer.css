@@ -1,0 +1,10 @@
+
+.app-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    padding: 0 1rem;
+    background-color: bisque;
+    /* border-top: 1px solid var(--hovermode); */
+}
