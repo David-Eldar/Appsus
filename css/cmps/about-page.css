@@ -1,0 +1,16 @@
+.about-page .about-container{
+   /* margin: auto; */
+     display: flex; 
+    flex-direction: column;
+    /* justify-content: center;
+    text-align: center;
+     align-items:center; 
+      */
+}
+/* .about-container{
+    margin: 0;
+    text-align: center;
+    width: 1rem;
+    height: 10px;
+    
+} */

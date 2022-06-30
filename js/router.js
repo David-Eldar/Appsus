@@ -1,7 +1,7 @@
-// import keepApp from "./views/book-app.cmp.js";
-import homePage from './pages/home-page.cmp.js';
-// import aboutPage from './views/about-page.cmp.js';
 
+import homePage from './pages/home-page.cmp.js';
+import aboutPage from './pages/about-page.cmp.js';
+import keepApp from './apps/keep/pages/note-app.cmp.js';
 
 
 const routes = [
@@ -9,22 +9,18 @@ const routes = [
         path: '/',
         component: homePage
     },
-    // {
-    //     path: '/about',
-    //     component: aboutPage
-    // },
-    // {
-    //     path: '/book',
-    //     component: keepApp
-    // },
-    // {
+    {
+        path: '/about',
+        component: aboutPage
+    },
+    {
+        path: '/notes',
+        component: keepApp
+    },
+    
 
-    // },
-    // {
-    //     path: '/book/add/:bookId?',
-    //     component: bookAdd
-    // },
-]
+
+];
 
 export const router = VueRouter.createRouter({
     routes,

@@ -1,0 +1,57 @@
+/* book-filter */
+.book-filter {
+    margin-top: 10%;
+    padding: 10px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 40em;
+    max-width: 100%;
+    height: fit-content;
+    margin: auto;
+    border: 10px groove  rgb(49, 23, 11);
+    background-color: rgb(116, 58, 34);
+    background-image: url("/patterns/wood-pattern.png");
+    border-radius: 50px;
+    color: rgba(255, 243, 205, 0.786);
+
+    
+}
+.book-filter h1 {
+    font-size: x-large;
+    
+}
+.book-filter input{
+    margin: auto;
+    width: 30em;
+    max-width: 70%;
+    height: 5vh;
+    border: 3px solid black;
+    border-radius: 12px;
+    font-style: italic;
+}
+
+.book-filter button {
+    width: 10em;
+    height: 3vh;
+    background-color: rgb(239, 197, 157);
+    
+    
+}
+
+
+.price-filter-container{
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+    font-weight: bolder;
+    
+    
+}
+.price-filter-container input{
+    margin: auto;
+    width: 30rem;
+}
+

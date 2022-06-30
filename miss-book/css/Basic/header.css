@@ -1,0 +1,17 @@
+.app-header{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .nav-bar {
+    margin-right: 10px;
+    margin-top: -30px; 
+    float:right;
+} */
+
+.logo {
+    font-family: cursive;
+    font-size: xx-large;
+    font-weight: 900;
+}

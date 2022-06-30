@@ -5,5 +5,12 @@
 
 /* UTILS */
 
-@import 'utils/vars.css'
+@import 'utils/vars.css';
+
+
+/* CMPS */
+
+@import 'cmps/app-home.css';
+@import 'cmps/about-page.css';
+
 
