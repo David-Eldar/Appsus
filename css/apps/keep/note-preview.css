@@ -1,15 +1,18 @@
 .options {
     display: flex;
-    justify-content: space-between;
     align-items:center;
+    margin: auto;
+    justify-content:center;
     height: 10vh;
-    padding: 0 1rem;
-    border-bottom: 1px solid var(--hovermode);
+    padding: 0 2rem;
     position: relative;
-    background-color: rgb(253, 246, 236);
+    width: 20em;
+    
+    
+    
 }
 
-.note-icon.pin{
+.note-icon{
     margin: auto;
     width: 1.5rem;
 }

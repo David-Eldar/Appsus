@@ -9,10 +9,10 @@ export default {
   <component :is="note.type" :note="note" />
 
 <div class="options">
-  <img  @click="togglePin(note.id)" class="note-icon pin" :class="isPinned" src="assets/icons/keep icons/pin.png" />
-  <img class="note-icon duplicate" src="img/keep-icons/duplicate.png" />
-  <img  class="note-icon edit" src="img/keep-icons/edit.png" />
-  <img class="note-icon delete" src="img/keep-icons/delete.png"/>
+  <img  @click="togglePin(note.id)" class="note-icon pin" :class="isPinned" src="assets/icons/keep-icons/pin.png" />
+  <img class="note-icon duplicate" src="assets/icons/keep-icons/duplicate.png" />
+  <img  class="note-icon edit" src="assets/icons/keep-icons/edit.png" />
+  <img class="note-icon delete" src="assets/icons/keep-icons/delete.png"/>
 </div>
 
   </section>
