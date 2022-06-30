@@ -14,3 +14,8 @@
 @import 'cmps/about-page.css';
 
 
+/* APPS/KEEP */
+
+@import 'apps/keep/note-preview.css'
+
+

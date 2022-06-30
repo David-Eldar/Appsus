@@ -1,0 +1,15 @@
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: 10vh;
+    padding: 0 1rem;
+    border-bottom: 1px solid var(--hovermode);
+    position: relative;
+    background-color: rgb(253, 246, 236);
+}
+
+.note-icon.pin{
+    margin: auto;
+    width: 1.5rem;
+}

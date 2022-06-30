@@ -1,6 +1,6 @@
-import { utilService } from './util.service.js'
+// import { utilService } from './util.service.js'
 
-export const storageService = {
+export const asyncStorage = {
     query,
     get,
     post,
@@ -10,7 +10,7 @@ export const storageService = {
 }
 
 function query(entityType) {
-    var entities = JSON.parse(localStorage.getItem(entityType)) || []
+    var entities = JSON.parse(localStorage.getItem(entityType)) || _createNotes()
     return Promise.resolve(entities);
 }
 
@@ -60,3 +60,4 @@ function remove(entityType, entityId) {
 function _save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
+

@@ -1,12 +1,13 @@
-.about-page .about-container{
-   /* margin: auto; */
-     display: flex; 
-    flex-direction: column;
-    /* justify-content: center;
-    text-align: center;
-     align-items:center; 
-      */
+.about-page section {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* text-align: center; */
+  align-items: center;
+
 }
+
 /* .about-container{
     margin: 0;
     text-align: center;

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "101",
+    "type": "note-txt",
+    "isPinned": true,
+    "info": {
+      "txt": "Whad up yo?"
+    },
+    "style": {
+      "backgroundColor": "red"
+    }
+  },
+  {
+    "id": "102",
+    "type": "note-img",
+    "isPinned": false,
+    "info": {
+      "url": "https://i.pinimg.com/originals/4f/b5/88/4fb5886838c0492fc4b0cee3de87b648.jpg",
+      "title": "Programmer Life"
+    },
+    "style": {
+      "backgroundColor": "green"
+    }
+  },
+  {
+    "id": "103",
+    "type": "note-img",
+    "isPinned": false,
+    "info": {
+      "url": "https://i.pinimg.com/originals/4f/b5/88/4fb5886838c0492fc4b0cee3de87b648.jpg",
+      "title": "Programmer Life"
+    }
+  },
+  {
+    "id": "104",
+    "type": "note-img",
+    "isPinned": false,
+    "info": {
+      "url": "https://i.pinimg.com/originals/4f/b5/88/4fb5886838c0492fc4b0cee3de87b648.jpg",
+      "title": "Programmer Life"
+    }
+  }
+]
