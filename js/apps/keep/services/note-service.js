@@ -27,7 +27,7 @@ function query() {
 }
 function get(noteId) {
     return asyncStorage.get(NOTES_KEY, noteId)
-  }
+}
 
 
 function _createNotes() {
@@ -41,14 +41,14 @@ function _createNotes() {
                 info: {
                     label: "Finish this sprint",
                     todos: [
-                        { id: utilService.makeId(), txt: "write code", doneAt: 187111111 },
-                        { id: utilService.makeId(), txt: "try to make it work in small steps", doneAt: null },
-                        { id: utilService.makeId(), txt: "try to understand why some stupid object dose not rendering", doneAt: null },
+                        { id: utilService.makeId(), txt: "write code", done: 187111111 },
+                        { id: utilService.makeId(), txt: "try to make it work in small steps", done: null },
+                        { id: utilService.makeId(), txt: "try to understand why some stupid object dose not rendering", done: null },
                         { id: utilService.makeId(), txt: "realise you wrote 'notes' insted of 'note' in the text interpolation", doneAt: null },
-                        { id: utilService.makeId(), txt: "realise you'v spend 6 hours for the previous understanding", doneAt: null },
-                        { id: utilService.makeId(), txt: "Important: you are a f***in moron", doneAt: null },
-                        { id: utilService.makeId(), txt: "bang your head against the table (man do not cry)", doneAt: 187111111 },
-                        { id: utilService.makeId(), txt: "repeat the previous action 37 times", doneAt: 187111111 }
+                        { id: utilService.makeId(), txt: "realise you'v spend 6 hours for the previous understanding", done: null },
+                        { id: utilService.makeId(), txt: "Important: you are a f***in moron", done: null },
+                        { id: utilService.makeId(), txt: "bang your head against the table (man do not cry)", done: null },
+                        { id: utilService.makeId(), txt: "repeat the previous action 37 times", done: null }
                     ],
                 },
                 style: {
@@ -85,7 +85,7 @@ function _createNotes() {
                 info: {
                     url: "https://www.youtube.com/watch?v=ZrE7cCv9a-c&ab",
                     title: "Everything Black"
-    
+
                 },
                 style: {
                     backgroundColor: utilService.getRandomColor()
