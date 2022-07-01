@@ -1,0 +1,11 @@
+/* app-main */
+
+.keep-main {
+    display: flex;
+    background-color: #FFF5E5;
+}
+.keep-main .open-screen{
+    pointer-events: auto;
+    opacity: 1;
+
+}

@@ -10,10 +10,10 @@ _createNotes()
 
 export const noteService = {
     query,
-    get,
+    togglePin,
+    // get,
     // saveNote,
     // deleteNote,
-    // togglePin,
     // updateBgc,
     // toggleTodo,
     // duplicateNote,
@@ -25,8 +25,26 @@ function query() {
     return asyncStorage.query(NOTES_KEY)
 
 }
-function get(noteId) {
+// function get(noteId) {
+//     return asyncStorage.get(NOTES_KEY, noteId)
+// }
+
+function togglePin(noteId) {
     return asyncStorage.get(NOTES_KEY, noteId)
+        .then(note => {
+            note.isPinned = !note.isPinned;
+            return asyncStorage.put(NOTES_KEY, note)
+        })
+}
+
+function toggleTodo(todoId, noteId) {
+    return asyncStorage.get(NOTES_KEY, noteId)
+        .then(note => {
+            const todo = note.info.todos.find(todo => todo.id === todoId)
+            if (!todo.done) todo.done = Date.now();
+            else todo.done = null
+            return asyncStorage  .put(NOTES_KEY, note)
+        })
 }
 
 
@@ -46,9 +64,9 @@ function _createNotes() {
                         { id: utilService.makeId(), txt: "try to understand why some stupid object dose not rendering", done: null },
                         { id: utilService.makeId(), txt: "realise you wrote 'notes' insted of 'note' in the text interpolation", doneAt: null },
                         { id: utilService.makeId(), txt: "realise you'v spend 6 hours for the previous understanding", done: null },
-                        { id: utilService.makeId(), txt: "Important: you are a f***in moron", done: null },
-                        { id: utilService.makeId(), txt: "bang your head against the table (man do not cry)", done: null },
-                        { id: utilService.makeId(), txt: "repeat the previous action 37 times", done: null }
+                        { id: utilService.makeId(), txt: "you are a moron", done: null },
+                        { id: utilService.makeId(), txt: "bang your head against the table (man do not cry...)", done: null },
+                        { id: utilService.makeId(), txt: "repeat the previous action 37 times", done: 187111111 }
                     ],
                 },
                 style: {

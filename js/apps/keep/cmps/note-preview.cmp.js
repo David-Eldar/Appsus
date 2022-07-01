@@ -10,7 +10,7 @@ export default {
   <section class="note-container" v-if="note">
   <!-- <label>{{note.type}}</label> -->
   <section :style="bgc" class="note">
-  <component :is="note.type" :note="note"/>
+  <component :is="note.type" :note="note" @todo-done="toggleTodo"/>
 
 <div class="options">
   <img  @click="togglePin(note.id)" class="note-icon pin" :class="isPinned" src="assets/icons/keep-icons/pin.png" />
@@ -37,6 +37,9 @@ export default {
     methods: {
         togglePin(noteId) {
             this.$emit('note-pinned', noteId)
+        },
+        toggleTodo(todoId, noteId) {
+            this.$emit('todo-done', todoId, noteId)
         },
     },
     computed: {

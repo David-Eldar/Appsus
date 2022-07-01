@@ -16,6 +16,8 @@
 
 /* APPS/KEEP */
 
-@import 'apps/keep/note-preview.css'
+@import 'apps/keep/note-app.css';
+@import 'apps/keep/note-preview.css';
+@import 'apps/keep/note-todo.css';
 
 
