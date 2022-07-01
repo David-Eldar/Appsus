@@ -7,12 +7,12 @@ export default {
 
  template: `
  <section v-if="notes" class="notes-list">
-   <ul>
-    <li v-for="note in notes" :key="note.id" class="note-preview-container">
-      <note-preview :note="note"></note-preview>
-
-    </li>
-   </ul>
+   
+      <note-preview
+       v-for="note in notes"
+       :key="note.id"
+        :note="note">
+      </note-preview>
 
  </section>
 `,

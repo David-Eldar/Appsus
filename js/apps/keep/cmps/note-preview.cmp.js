@@ -1,3 +1,4 @@
+import noteTxt from "./note-txt.cmp.js"
 import noteTodos from "./note-todos.cmp.js"
 
 export default {
@@ -5,8 +6,9 @@ export default {
 
     template: `
   <section class="note-container" v-if="note">
-  <label>{{note}}</label>
-  <component :is="note.type" :note="note" />
+  <!-- <label>{{note.type}}</label> -->
+  <section :style="bgc" class="note">
+  <component :is="note.type" :note="note"/>
 
 <div class="options">
   <img  @click="togglePin(note.id)" class="note-icon pin" :class="isPinned" src="assets/icons/keep-icons/pin.png" />
@@ -14,18 +16,31 @@ export default {
   <img  class="note-icon edit" src="assets/icons/keep-icons/edit.png" />
   <img class="note-icon delete" src="assets/icons/keep-icons/delete.png"/>
 </div>
-
+  </section>
   </section>
 `,
+
+    components: {
+        noteTodos,
+        noteTxt,
+        
+    },
     data() {
         return {};
     },
+
     created() { },
     methods: {
         togglePin(noteId) {
             this.$emit('note-pinned', noteId)
         },
     },
-    computed: {},
+    computed: {
+        bgc() {
+            return this.note.style.backgroundColor ?
+                `background-color: ${this.note.style.backgroundColor};
+                 border: 1px solid ${this.note.style.backgroundColor}` : ''
+        },
+    },
     unmounted() { },
 };
