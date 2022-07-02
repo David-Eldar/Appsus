@@ -1,4 +1,10 @@
-.note-todo li{
+.note-todo{
+    width: 400px;
+    min-width: 300px;
     text-align: left;
+
 }
+
+
+
 

@@ -29,3 +29,15 @@ export const eventBus = { on, emit };
 export function eventUpdateNote(noteId) {
     emit('eventUpdateNote', noteId)
 }
+
+export function eventAddTodo(newNote) {
+    emit('eventAddTodo', newNote)
+}
+
+export function eventAddNote(newNote) {
+    emit('eventAddNote', newNote)
+}
+
+export function eventDeleteNote(noteId) {
+    emit('eventDeleteNote', noteId)
+}

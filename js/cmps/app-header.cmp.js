@@ -13,8 +13,8 @@ export default {
             </div>
             <nav class="nav-bar" :class="onNavOpen">
                 <router-link to="/"><img src="assets/icons/main-icons/home.png" alt="" @click="toggleNav"></router-link>
-                <router-link to="/mail"><img src="assets/icons/main-icons/mail.png" alt="" @click="toggleNav"></router-link> 
-                <router-link to="/book"><img src="assets/icons/main-icons/book.png" alt="" @click="toggleNav"></router-link>
+                <!-- <router-link to="/mail"><img src="assets/icons/main-icons/mail.png" alt="" @click="toggleNav"></router-link>  -->
+                <!-- <router-link to="/book"><img src="assets/icons/main-icons/book.png" alt="" @click="toggleNav"></router-link> -->
                 <router-link to="/notes"><img src="assets/icons/main-icons/keep.png" alt="" @click="toggleNav"></router-link>
           </nav>
 

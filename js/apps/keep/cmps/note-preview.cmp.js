@@ -1,8 +1,13 @@
-import noteTxt from "./note-txt.cmp.js"
-import noteTodos from "./note-todos.cmp.js"
-import noteVideo from "./note-video.cmp.js"
-import noteImg from "./note-img.cmp.js"
+// import noteTxt from "./note-txt.cmp.js"
+// import noteTodos from "./note-todos.cmp.js"
+// import noteVideo from "./note-video.cmp.js"
+// import noteImg from "./note-img.cmp.js"
 import noteTools from "./note-tools.cmp.js"
+import noteEdit from "./note-edit.cmp.js"
+import { noteTxt, noteImg, noteVideo } from '../cmps/note-types.cmp.js'
+import { noteTodos } from "./note-todos.cmp.js"
+// import  noteTodos  from './note-todo.cmp.js'
+// import { noteTxt } from '../cmps/note-types.cmp.js'
 // import { eventPinnedNote } from '../../../main-services/eventBus-service.js'
 
 export default {
@@ -17,6 +22,7 @@ export default {
        </componant>
        </div>
     <note-tools :note="note"/>
+    <note-edit :note="note" v-if="isNoteEdit" @closeNoteEdit="closeNoteEdit"/>
   </section>
   
 `,
@@ -26,16 +32,27 @@ export default {
         noteTxt,
         noteVideo,
         noteImg,
-        noteTools
-        
+        noteTools,
+        noteEdit
+
     },
     data() {
-        return {};
+        return {
+            isNoteEdit: false,
+        };
     },
 
     created() { },
     methods: {
-
+        openNoteEdit() {
+            this.isNoteEdit = true
+        },
+        closeNoteEdit() {
+            this.isNoteEdit = false
+        },
+        toggleNoteEdit() {
+            this.isNoteEdit = !this.isNoteEdit
+        }
     },
     computed: {
 

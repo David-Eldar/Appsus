@@ -1,7 +1,38 @@
-export default {
+
+
+// TEXT NOTE //
+export const noteTxt = {
+    props: ["note"],
+    template: `
+        <section class="note-txt">
+            <h3>{{note.info.title}}</h3>
+                 {{note.info.txt}}
+        </section>
+    `,
+    data() {
+        return {}
+    },
+}
+
+// IMG NOTE //
+export const noteImg = {
+    props: ["note"],
+    template: `
+        <section class="note-img">
+            <h4>{{note.info.title}}</h4>
+            <img :src="note.info.url"/>
+        </section>
+    `,
+    data() {
+        return {}
+    },
+}
+
+// VIDEO NOTE //
+export const noteVideo = {
     props: ['note'],
     template: `
-        <section class="note-template note-video">
+        <section class="note-video">
             <h2 v-if="note.info.title" class="info-txt">{{note.info.title}}</h2>
 
             <iframe width="100%"
@@ -31,3 +62,4 @@ export default {
         }
     }
 }
+

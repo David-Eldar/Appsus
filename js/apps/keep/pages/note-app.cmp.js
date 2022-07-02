@@ -39,12 +39,26 @@ export default {
                 this.notes = notes
             })
         eventBus.on('eventUpdateNote', this.updateNote)
+        eventBus.on('eventAddNote', this.addNote)
+        eventBus.on('eventDeleteNote', this.deleteNote)
 
     },
 
     methods: {
         setFilter(filterBy) {
             this.filterBy = filterBy
+        },
+
+        addNote(note) {
+            noteService.addNote(note)
+                .then((note) => this.notes.unshift(note))
+        },
+        deleteNote(noteId) {
+            noteService.remove(noteId)
+                .then(() => {
+                    const idx = this.notes.findIndex((note) => note.id === noteId)
+                    this.notes.splice(idx, 1)
+                })
         },
 
         updateNote(updatedNote) {

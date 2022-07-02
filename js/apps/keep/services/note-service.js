@@ -4,8 +4,8 @@ import { utilService } from "../../../main-services/util.service.js";
 // import defaultNotes from './notes.json' assert { type: 'json'}
 // import notesPool from "./notes-pool.js"
 
-const NOTES_KEY = 'notes_db';
-const notesDb = storageService.loadFromStorage(NOTES_KEY) || _createNotes()
+const NOTE_KEY = 'notes_db';
+const notesDb = storageService.loadFromStorage(NOTE_KEY) || _createNotes()
 
 _createNotes()
 
@@ -15,17 +15,14 @@ export const noteService = {
     getNotes,
     createNote,
     saveNote,
-    // addNote
-    // deleteNote,
-    // updateBgc,
-    // toggleTodo,
-    // duplicateNote,
-    // editNote,
+    addNote,
+    get,
+    remove,
 }
 
 
 function query() {
-    return asyncStorage.query(NOTES_KEY)
+    return asyncStorage.query(NOTE_KEY)
 
 }
 
@@ -73,21 +70,30 @@ function getNotes(noteId) {
     return Promise.resolve(notesDb)
     
 }
+function get(noteId) {
+    return asyncStorageService.get(NOTE_KEY, noteId)
+}
+
+function remove(noteId) {
+    return asyncStorageService.remove(NOTE_KEY, noteId)
+}
+
+
 
 function saveNote(note) {
-    if (note.id) return asyncStorage.put(NOTES_KEY, note)
-    else return asyncStorage.post(NOTES_KEY, note)
+    if (note.id) return asyncStorage.put(NOTE_KEY, note)
+    else return asyncStorage.post(NOTE_KEY, note)
 }
 
 
 
 function toggleTodo(todoId, noteId) {
-    return asyncStorage.get(NOTES_KEY, noteId)
+    return asyncStorage.get(NOTE_KEY, noteId)
         .then(note => {
             const todo = note.info.todos.find(todo => todo.id === todoId)
             if (!todo.done) todo.done = Date.now();
             else todo.done = null
-            return asyncStorage.put(NOTES_KEY, note)
+            return asyncStorage.put(NOTE_KEY, note)
         })
 }
 
@@ -95,7 +101,7 @@ function toggleTodo(todoId, noteId) {
 
 
 function _createNotes() {
-    let notes = storageService.loadFromStorage(NOTES_KEY);
+    let notes = storageService.loadFromStorage(NOTE_KEY);
     if (!notes || !notes.length) {
         notes = [
             {
@@ -156,7 +162,7 @@ function _createNotes() {
                 }
             },
         ];
-        storageService.saveToStorage(NOTES_KEY, notes);
+        storageService.saveToStorage(NOTE_KEY, notes);
     }
     return notes
 }
