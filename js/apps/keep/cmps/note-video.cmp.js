@@ -1,14 +1,33 @@
 export default {
-    props: ["note"],
+    props: ['note'],
     template: `
-        <section class="note-video">
-            <iframe width="250"
-            :src="note.info.url">
-        </iframe>
-        <h4>{{note.info.title}}</h4>
+        <section class="note-template note-video">
+            <h2 v-if="note.info.title" class="info-txt">{{note.info.title}}</h2>
+
+            <iframe width="100%"
+            :src="videoSrcLink" 
+           
+
+            frameborder="0" allow="accelerometer; autoplay; 
+            encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </section>
     `,
-    data() {
-        return {}
+    
+    methods: {
+        getId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+
+            return (match && match[2].length === 11)
+                ? match[2]
+                : null;
+        }
     },
+    computed: {
+        videoSrcLink() {
+            let url = 'https://www.youtube.com/embed/' + this.note.info.video
+            return url
+        }
+    }
 }

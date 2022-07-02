@@ -1,11 +1,7 @@
 /* app-main */
 
-.keep-main {
-    display: flex;
-    background-color: #FFF5E5;
-}
-.keep-main .open-screen{
-    pointer-events: auto;
-    opacity: 1;
-
+.app-main{
+    /* display: flex; */
+    max-width: 100%;
+    /* height: auto; */
 }

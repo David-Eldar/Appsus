@@ -1,11 +1,13 @@
 /* BASE */
-@import 'parts/base.css';
+@import 'basic/base.css';
+
+/* MAIN APP PARTS */
 @import 'parts/header.css';
 @import 'parts/footer.css';
 
-/* UTILS */
+/* SETUP */
 
-@import 'utils/vars.css';
+@import 'setup/vars.css';
 
 
 /* CMPS */
@@ -17,7 +19,10 @@
 /* APPS/KEEP */
 
 @import 'apps/keep/note-app.css';
+@import 'apps/keep/note-list.css';
 @import 'apps/keep/note-preview.css';
+@import 'apps/keep/note-filter.css';
 @import 'apps/keep/note-todo.css';
+@import 'apps/keep/note-tools.css';
 
 

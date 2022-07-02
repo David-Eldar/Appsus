@@ -4,15 +4,18 @@ import { utilService } from "../../../main-services/util.service.js";
 // import defaultNotes from './notes.json' assert { type: 'json'}
 // import notesPool from "./notes-pool.js"
 
-const NOTES_KEY = 'notes';
+const NOTES_KEY = 'notes_db';
+const notesDb = storageService.loadFromStorage(NOTES_KEY) || _createNotes()
 
 _createNotes()
 
 export const noteService = {
-    query,
-    togglePin,
-    // get,
-    // saveNote,
+    // query,
+    // togglePin,
+    getNotes,
+    createNote,
+    saveNote,
+    // addNote
     // deleteNote,
     // updateBgc,
     // toggleTodo,
@@ -25,17 +28,58 @@ function query() {
     return asyncStorage.query(NOTES_KEY)
 
 }
-// function get(noteId) {
-//     return asyncStorage.get(NOTES_KEY, noteId)
-// }
 
-function togglePin(noteId) {
-    return asyncStorage.get(NOTES_KEY, noteId)
-        .then(note => {
-            note.isPinned = !note.isPinned;
-            return asyncStorage.put(NOTES_KEY, note)
-        })
+function createNote(noteInfo) {
+    const note = {
+        type: noteInfo.type,
+        noteType: noteInfo.noteType,
+        isPinned: noteInfo.isPinned,
+        info: {
+            title: noteInfo.info.title,
+            txt: noteInfo.info.txt,
+            img: noteInfo.info.img,
+            video: noteInfo.info.video,
+            todos: noteInfo.info.todos,
+        },
+        style: {
+            backgroundColor: '#eee'
+        }
+    }
+    notesDb.unshift(note)
+    storageService.saveToStorage(NOTE_KEY, notesDb)
+    return Promise.resolve()
 }
+
+function addNote(note) {
+    const newNote = {
+        type: note.type,
+        noteType: note.noteType,
+        info: {
+            img: note.info.img || '',
+            title: note.info.title || '',
+            video: note.info.video || '',
+            txt: note.info.txt || '',
+            todos: note.info.todos || null,
+        },
+        style: {
+            backgroundColor: utilService.getRandomColor()
+        }
+    }
+    return save(newNote)
+}
+
+function getNotes(noteId) {
+    // return asyncStorage.get(NOTES_KEY, noteId)
+    return Promise.resolve(notesDb)
+    
+}
+
+function saveNote(note) {
+    if (note.id) return asyncStorage.put(NOTES_KEY, note)
+    else return asyncStorage.post(NOTES_KEY, note)
+}
+
+
 
 function toggleTodo(todoId, noteId) {
     return asyncStorage.get(NOTES_KEY, noteId)
@@ -43,9 +87,11 @@ function toggleTodo(todoId, noteId) {
             const todo = note.info.todos.find(todo => todo.id === todoId)
             if (!todo.done) todo.done = Date.now();
             else todo.done = null
-            return asyncStorage  .put(NOTES_KEY, note)
+            return asyncStorage.put(NOTES_KEY, note)
         })
 }
+
+
 
 
 function _createNotes() {
@@ -59,14 +105,14 @@ function _createNotes() {
                 info: {
                     label: "Finish this sprint",
                     todos: [
-                        { id: utilService.makeId(), txt: "write code", done: 187111111 },
-                        { id: utilService.makeId(), txt: "try to make it work in small steps", done: null },
-                        { id: utilService.makeId(), txt: "try to understand why some stupid object dose not rendering", done: null },
+                        { id: utilService.makeId(), txt: "write code", doneAt: 187111111 },
+                        { id: utilService.makeId(), txt: "try to make it work in small steps", doneAt: null },
+                        { id: utilService.makeId(), txt: "try to understand why it dos'n work", doneAt: null },
                         { id: utilService.makeId(), txt: "realise you wrote 'notes' insted of 'note' in the text interpolation", doneAt: null },
-                        { id: utilService.makeId(), txt: "realise you'v spend 6 hours for the previous understanding", done: null },
-                        { id: utilService.makeId(), txt: "you are a moron", done: null },
-                        { id: utilService.makeId(), txt: "bang your head against the table (man do not cry...)", done: null },
-                        { id: utilService.makeId(), txt: "repeat the previous action 37 times", done: 187111111 }
+                        { id: utilService.makeId(), txt: "realise you'v spend 6 hours for the previous understanding", doneAt: null },
+                        { id: utilService.makeId(), txt: "acknowledge that you are a moron", doneAt: null },
+                        { id: utilService.makeId(), txt: "bang your head against the table (man do not cry...)", doneAt: null },
+                        { id: utilService.makeId(), txt: "repeat the previous action 37 times", doneAt: 187111111 }
                     ],
                 },
                 style: {
@@ -114,6 +160,16 @@ function _createNotes() {
     }
     return notes
 }
+
+
+// function _createNotes() {
+//     let notes = storageService.loadFromStorage(NOTES_KEY)
+//     if (!notes || !notes.length) {
+//         notes = notesPool
+//         storageService.saveToStorage(NOTES_KEY, notes)
+//     }
+//     return notes
+// }
 
 
 

@@ -22,3 +22,10 @@ function emit(eventName, data) {
 
 // we got 2 funcs on and emit
 export const eventBus = { on, emit };
+
+
+// NOTE EVENTS //
+
+export function eventUpdateNote(noteId) {
+    emit('eventUpdateNote', noteId)
+}

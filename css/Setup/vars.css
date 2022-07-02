@@ -1,0 +1,23 @@
+
+
+:root {
+
+    /* COLORS */
+    --hovermode: #d3d3d369;
+    --clr1: #3b5998;
+    --clr2: #8b9dc3;
+    --clr3: #dfe3ee;
+    --clr4: #f7f7f7;
+    --clr5: #ffffff;
+
+
+  /* SPACING */
+  --spacing-smallest: 0.3rem;
+  --spacing-small: 0.5rem;
+  --spacing-medium: 0.8rem;
+  --spacing-medium2: 1rem;
+  --spacing-medium3: 1.5rem;
+  --spacing-large: 2rem;
+  --spacing-large2: 2.5rem;
+
+}

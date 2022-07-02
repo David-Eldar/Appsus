@@ -1,7 +1,10 @@
 export const utilService = {
-
     makeId,
-    getRandomColor
+    getRandomColor,
+    getRandomInt,
+    getFormattedNowDate,
+    getFormattedDate,
+    getFormattedHour,
 }
 
 function makeId(length = 8) {
@@ -25,15 +28,38 @@ function getRandomInt(min, max) {
 }
 
 
-// ------- STOREGE SERVICE-------- //
+// TIME // 
+
+function getFormattedNowDate() {
+    const date = new Date();
+    const year = date.getFullYear().toString()
+    let month = (date.getMonth() + 1).toString()
+    let day = date.getDate().toString()
+    if (month < 10) month = '0' + month
+    if (day < 10) day = '0' + day
+    return year + '-' + month + '-' + day
+}
+
+function getFormattedDate(timestamp) {
+    const time = new Date(timestamp)
+    // Replacing '.' with '/'
+    return time.toLocaleString().split(',')[0].replace(/\./g, '/');
+}
+
+function getFormattedHour(timestamp) {
+    const time = new Date(timestamp)
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
+    const ampm = (hours >= 12) ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    const timeStr = hours + ':' + minutes + ' ' + ampm;
+    return timeStr
+}
 
 
-// function saveToStorage(key, value) {
-//     localStorage.setItem(key, JSON.stringify(value) || null);
-// }
 
-// function loadFromStorage(key) {
-//     let data = localStorage.getItem(key);
-//     return (data) ? JSON.parse(data) : undefined;
-// }
+
+
 

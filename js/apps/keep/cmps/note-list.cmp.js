@@ -3,28 +3,24 @@ import notePreview from "./note-preview.cmp.js"
 
 export default {
 
-  // props: ["notes"],
-  props: ["pinnedNotes", "unPinnedNotes"],
-
+  props: ["notes"],
+ 
   template: `
- <section class="notes-list">
-   <section class="pined-notes" v-if="pinnedNotes">
-     <note-preview
-      v-for="note in pinnedNotes"
-      :key="note.id"
-       :note="note"
-       @note-pinned="togglePin">
-     </note-preview>
-   </section>
-   <section class="unpinned-notes" v-if="unPinnedNotes" >
-     <note-preview
-      v-for="note in unPinnedNotes"
-      :key="note.id"
-       :note="note"
-       @note-pinned="togglePin">
-     </note-preview>
-   </section>
- </section>
+
+<section class="note-list">
+         
+       <div v-for="note in notes"
+            :key="note.id"
+            class="note-preview-container">
+            <note-preview v-if="note.isPinned" :note="note"></note-preview>
+        </div>
+       <div v-for="note in notes"
+            :key="note.id"
+            class="note-preview-container">
+            <note-preview v-if="!note.isPinned" :note="note"></note-preview>
+        </div>
+    </section>
+
 `,
 
   components: {
@@ -35,10 +31,7 @@ export default {
   },
 
   methods: {
-    togglePin(noteId) {
-      this.$emit('note-pinned', noteId)
-      
-    },
+
   },
   computed: {},
   unmounted() { },

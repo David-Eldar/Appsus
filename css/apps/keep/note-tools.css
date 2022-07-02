@@ -1,0 +1,19 @@
+.note-tools {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.note-tools-btn {
+    width: 30px
+}
+
+.note-tools-pin-btn i {
+    transform: rotateZ(-45deg);
+}
+
+.pinned i{
+    color: aqua;
+    transform: rotateZ(0deg);
+}

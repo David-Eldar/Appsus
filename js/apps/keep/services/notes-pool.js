@@ -1,6 +1,6 @@
+export function defaultNotes() {
 
-
-    [
+    emit([
         {
             id: utilService.makeId(),
             type: "note-todos",
@@ -8,10 +8,14 @@
             info: {
                 label: "Finish this sprint",
                 todos: [
-                    { id: utilService.makeId(), txt: "Write code", doneAt: 187111111 },
-                    { id: utilService.makeId(), txt: "Stare at code untill realizing why it's not working", doneAt: null },
-                    { id: utilService.makeId(), txt: "Ask Amir for help and get no for an answer", doneAt: null },
-                    { id: utilService.makeId(), txt: "Box shadow everywhere", doneAt: 187111111 }
+                    { id: utilService.makeId(), txt: "write code", doneAt: 187111111 },
+                    { id: utilService.makeId(), txt: "try to make it work in small steps", doneAt: null },
+                    { id: utilService.makeId(), txt: "try to understand why some stupid object dose not rendering", doneAt: null },
+                    { id: utilService.makeId(), txt: "realise you wrote 'notes' insted of 'note' in the text interpolation", doneAt: null },
+                    { id: utilService.makeId(), txt: "realise you'v spend 6 hours for the previous understanding", doneAt: null },
+                    { id: utilService.makeId(), txt: "you are a moron", doneAt: null },
+                    { id: utilService.makeId(), txt: "bang your head against the table (man do not cry...)", doneAt: null },
+                    { id: utilService.makeId(), txt: "repeat the previous action 37 times", doneAt: 187111111 }
                 ],
             },
             style: {
@@ -46,7 +50,7 @@
             type: "note-video",
             isPinned: false,
             info: {
-                url: "https://www.youtube.com/embed/tZKe908QmIg",
+                url: "https://www.youtube.com/watch?v=ZrE7cCv9a-c&ab",
                 title: "Everything Black"
 
             },
@@ -54,66 +58,5 @@
                 backgroundColor: utilService.getRandomColor()
             }
         },
-        {
-            id: utilService.makeId(),
-            type: "note-video",
-            isPinned: false,
-            info: {
-                url: "https://www.youtube.com/embed/qAYWw67yiN0",
-                title: "Some Songs"
-
-            },
-            style: {
-                backgroundColor: utilService.getRandomColor()
-            }
-        },
-        {
-            id: utilService.makeId(),
-            type: "note-img",
-            isPinned: false,
-            info: {
-                url: "https://i.imgflip.com/67f8oz.jpg",
-                title: "Box Shadow"
-            },
-            style: {
-                backgroundColor: utilService.getRandomColor()
-            }
-        },
-        {
-            id: utilService.makeId(),
-            type: "note-img",
-            isPinned: false,
-            info: {
-                url: "https://i.imgflip.com/67k6s6.jpg",
-                title: "Scratching pupiks"
-            },
-            style: {
-                backgroundColor: utilService.getRandomColor()
-            }
-        },
-        {
-            id: utilService.makeId(),
-            type: "note-img",
-            isPinned: false,
-            info: {
-                url: "https://25.media.tumblr.com/7ebe1f7cd648320a8b027cc182386132/tumblr_mhq8386AFz1rhcghpo1_400.gif",
-                title: "My mom when she needs help but I have a sprint to complete"
-            },
-            style: {
-                backgroundColor: utilService.getRandomColor()
-            }
-        },
-        {
-            id: utilService.makeId(),
-            type: "note-img",
-            isPinned: false,
-            info: {
-                url: "https://i.pinimg.com/originals/32/80/a9/3280a988c1d0d1ecd1be9f615c44e6b0.gif",
-                title: "Trying to apply Drag and Drop to my project"
-            },
-            style: {
-                backgroundColor: utilService.getRandomColor()
-            }
-        },
-    ]
-
+    ])
+}

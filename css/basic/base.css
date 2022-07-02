@@ -1,13 +1,16 @@
-/* * {
+* {
     box-sizing: border-box;
-} */
-
-h1, h2, h3, h4, h5, h6, p {
     margin: 0;
-    
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-html,body {
+html{
+    display: flex;
+}
+
+body {
     height: 100%;
     margin: 0; 
     /* text-align: center;  */
@@ -20,11 +23,11 @@ html,body {
 
 
 
-.main-container{
+/* .main-container{
     height: 100%;
     margin: auto;
     text-align: center;
-}
+} */
 
 
 a {

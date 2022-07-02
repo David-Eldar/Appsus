@@ -9,16 +9,20 @@ export const asyncStorage = {
     postMany
 }
 
+
+// gets all the items
 function query(entityType) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || _createNotes()
     return Promise.resolve(entities);
 }
 
+//get an item by id
 function get(entityType, entityId) {
     return query(entityType)
         .then(entities => entities.find(entity => entity.id === entityId))
 }
 
+//create new item
 function post(entityType, newEntity) {
     newEntity.id = utilService.makeId()
     return query(entityType)
@@ -29,6 +33,7 @@ function post(entityType, newEntity) {
         })
 }
 
+//create new items
 function postMany(entityType, newEntities) {
     return query(entityType)
         .then(entities => {
@@ -38,6 +43,7 @@ function postMany(entityType, newEntities) {
         })
 }
 
+//update an item
 function put(entityType, updatedEntity) {
     return query(entityType)
         .then(entities => {
@@ -48,6 +54,8 @@ function put(entityType, updatedEntity) {
         })
 }
 
+
+//remove an item
 function remove(entityType, entityId) {
     return query(entityType)
         .then(entities => {
@@ -57,6 +65,8 @@ function remove(entityType, entityId) {
         })
 }
 
+
+//save to local storage
 function _save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
