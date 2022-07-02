@@ -41,3 +41,8 @@ export function eventAddNote(newNote) {
 export function eventDeleteNote(noteId) {
     emit('eventDeleteNote', noteId)
 }
+
+export function toggleEmit() {
+    console.log('see if calls')
+    emit('toggled')
+}

@@ -1,4 +1,4 @@
-.note-list {
+/* .note-list {
     margin: 2em auto;
     display: flex;
     column-gap: 0.25em;
@@ -7,7 +7,32 @@
     position: relative;
     padding: var(--spacing-large);
     margin-left: 3.75rem;
-}
+    width: 95vw;
+    
+     */
+
+
+.note-list {
+    margin:  auto ;
+    column-gap: 1em;
+    gap: 2em;
+    column-count: 5;
+    vertical-align: baseline;
+    width: 95vw;
+    padding-left: 1em;
+    
+  }
+.note-list {
+    margin:  auto ;
+    column-gap: 1em;
+    gap: 2em;
+    column-count: 5;
+    vertical-align: baseline;
+    width: 95vw;
+    padding-left: 1em;
+    
+  }
+
 
 
 
@@ -22,3 +47,32 @@
     left: 0;
     transform: translateY(-120%);
 } */
+
+@media screen and (max-width: 440px) {
+
+    .note-list {
+      column-count: 1;
+    }
+  }
+
+@media screen and (min-width: 460px) {
+
+  .note-list {
+    column-count: 2;
+  }
+}
+
+@media screen and (min-width: 760px) {
+
+
+  .note-list {
+    column-count: 3;
+  }
+}
+
+@media screen and (min-width: 900px) {
+
+  .note-list {
+    column-count: 4;
+  }
+}

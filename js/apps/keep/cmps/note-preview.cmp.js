@@ -1,14 +1,9 @@
-// import noteTxt from "./note-txt.cmp.js"
-// import noteTodos from "./note-todos.cmp.js"
-// import noteVideo from "./note-video.cmp.js"
-// import noteImg from "./note-img.cmp.js"
+
 import noteTools from "./note-tools.cmp.js"
 import noteEdit from "./note-edit.cmp.js"
 import { noteTxt, noteImg, noteVideo } from '../cmps/note-types.cmp.js'
 import { noteTodos } from "./note-todos.cmp.js"
-// import  noteTodos  from './note-todo.cmp.js'
-// import { noteTxt } from '../cmps/note-types.cmp.js'
-// import { eventPinnedNote } from '../../../main-services/eventBus-service.js'
+
 
 export default {
     props: ['note'],
@@ -21,7 +16,7 @@ export default {
        :note="note" >
        </componant>
        </div>
-    <note-tools :note="note"/>
+    <note-tools :note="note" @openNoteEdit="toggleNoteEdit"/>
     <note-edit :note="note" v-if="isNoteEdit" @closeNoteEdit="closeNoteEdit"/>
   </section>
   
@@ -60,9 +55,11 @@ export default {
         //     return this.note.isPinned ? 'pinned ' : ''
         // },
         noteBgc() {
-            return this.note.style.backgroundColor ?
-                `background-color: ${this.note.style.backgroundColor};
-                 border: 1px solid ${this.note.style.backgroundColor}` : ''
+            // return this.note.style.backgroundColor ?
+            //     `background-color: ${this.note.style.backgroundColor};
+            //      border: 1px solid ${this.note.style.backgroundColor}` : ''
+            return { backgroundColor: this.note.style.backgroundColor }
+
         },
     },
     unmounted() { },

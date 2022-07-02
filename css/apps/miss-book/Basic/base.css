@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(237, 178, 119, 0.731);
+    color: rgb(56, 57, 58)
+}
+
+
+/* app-header, app-footer */
+.app-header, .app-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: rgb(172, 172, 172);
+    color: black;
+    font-size: large;
+    height: 8vh;
+}
+
+.app-main{
+    height: 85vh;
+    background-color: rgba(237, 178, 119, 0.731);
+
+}
+
+
+
+img {
+    width: 150px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+button {
+    box-shadow: 1px 1.5px #666;
+    cursor: pointer;
+    align-self: center;
+    background-color: rgb(240, 163, 128);
+    border-radius: 5px;
+    width: 8rem;
+}
+
+
+button:hover {
+    filter: brightness(110%);
+}
+
+button:active {
+    box-shadow: 1px 1px 1px 1px #666;
+    transform: translateY(4px);
+    filter: brightness(125%);
+}
+
+/* book-app */
+.book-app {
+    background-color: rgba(240, 184, 128, 0.897);
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+
+}

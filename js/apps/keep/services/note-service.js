@@ -71,11 +71,11 @@ function getNotes(noteId) {
     
 }
 function get(noteId) {
-    return asyncStorageService.get(NOTE_KEY, noteId)
+    return asyncStorage.get(NOTE_KEY, noteId)
 }
 
 function remove(noteId) {
-    return asyncStorageService.remove(NOTE_KEY, noteId)
+    return asyncStorage.remove(NOTE_KEY, noteId)
 }
 
 
@@ -161,6 +161,22 @@ function _createNotes() {
                     backgroundColor: utilService.getRandomColor()
                 }
             },
+            {
+                id: utilService.makeId(),
+                type: "note-img",
+                isPinned: false,
+                info: {
+                    url: "https://25.media.tumblr.com/7ebe1f7cd648320a8b027cc182386132/tumblr_mhq8386AFz1rhcghpo1_400.gif",
+                    title: "My mom when she needs help but I have a sprint to complete"
+                },
+                style: {
+                    backgroundColor: utilService.getRandomColor()
+                }
+            },
+
+
+
+
         ];
         storageService.saveToStorage(NOTE_KEY, notes);
     }

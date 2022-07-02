@@ -1,3 +1,5 @@
+import { toggleEmit } from '../../../main-services/eventBus-service.js'
+
 export default {
     template: `
       <section class="keep-filter">
@@ -26,7 +28,7 @@ export default {
       },
       toggleSideNav() {
         toggleEmit()
-        console.log('called')
+        
       },
     },
     computed: {},

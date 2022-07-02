@@ -12,7 +12,8 @@ export const noteTodos = {
             :class="{'todo-finished' : todo.isFinished, 'todo-unfinished': !todo.isFinished}"
             class="todo-li">
             {{todo.txt}}
-            <button @click.stop="removeTodo(idx)" class="todo-remove-btn"><i class="fa-solid fa-circle-minus"></i></button>
+            <button @click.stop="removeTodo(idx)" class="todo-remove-btn">
+                <i class="fa-solid fa-check"></i></button>
             </li>
         </ul>
         <input @keyup.enter="addTodo" v-model="nextTodo" class="next-todo-input" placeholder="To do.."/>

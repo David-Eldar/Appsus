@@ -8,7 +8,7 @@ export default {
         @keyup.enter="updateNote"
         @key.esc="closeNoteEdit">
     <div class="edit-note-btn-container">
-        <button class="edit-note-btn-update" @click="updateNote">Update Note</button>
+        <button class="edit-note-btn-update" @click="updateNote">Update</button>
         <button class="edit-note-btn-cancel" @click="closeNoteEdit">Cancel</button>
     </div>
     </section>

@@ -2,7 +2,7 @@ import { noteService } from "../services/note-service.js"
 import { eventBus } from '../../../main-services/eventBus-service.js'
 import noteFilter from '../cmps/note-filter.cmp.js'
 import noteList from "../cmps/note-list.cmp.js"
-// import noteFilter from "../cmps/note-filter.cmp.js"
+import createNote from "../cmps/create-note.cmp.js"
 
 
 export default {
@@ -11,7 +11,7 @@ export default {
             <section v-if="notes"class="app-main">
 
             <note-filter @filter-set="setFilter"/>
-
+            <create-note />
             <note-list :notes="notesToShow" />
 
         </section>
@@ -20,6 +20,7 @@ export default {
     components: {
         noteList,
         noteFilter,
+        createNote,
     },
 
     data() {
